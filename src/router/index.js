@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import FilterGradeView from "@/views/FilterGradeView";
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/filter/grade',
+    name: 'gradeRoute',
+    component: FilterGradeView
   },
   {
     path: '/about',
