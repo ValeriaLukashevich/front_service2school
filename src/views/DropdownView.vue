@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     getcitiesDropdownInputs: function () {
-      this.$http.get("/test")
+      this.$http.get("/views/db")
           .then(response => {
             this.citiesDropdownInputs = response.data
           })
