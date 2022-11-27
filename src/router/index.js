@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import FilterGradeView from "@/views/FilterGradeView";
 import DropdownView from "@/views/DropdownView";
+import FilterSubjectView from "@/views/FilterSubjectView";
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/views/db',
     name: 'dbRoute',
     component: DropdownView
+  },
+  {
+    path: '/filter/subject',
+    name: 'subjectRoute',
+    component: FilterSubjectView
   },
   {
     path: '/about',

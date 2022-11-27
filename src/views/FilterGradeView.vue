@@ -1,12 +1,12 @@
 <template>
   <div>
     <p class="text-start">Millistele klassidele sobib:</p>
-  <div v-for="grade in grades" class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      {{ grade.gradeNumber }}
-    </label>
-  </div>
+    <div v-for="grade in grades" class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        {{ grade.gradeNumber }}
+      </label>
+    </div>
 
   </div>
 </template>
@@ -18,10 +18,10 @@ export default {
     return {
       grades: [
         {
-    gradeId: 0,
-    gradeNumber: 0
+          gradeId: 0,
+          gradeNumber: 0
         }
-  ]
+      ]
     }
   },
   methods: {
@@ -32,7 +32,7 @@ export default {
           })
           .catch(error => {
             alert('viga')
-            console.log('noooo')
+            console.log(error)
           })
     }
   },

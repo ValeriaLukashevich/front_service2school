@@ -2,7 +2,7 @@
   <div>
     <select class="form-select" aria-label="Default select example">
       <option selected disabled value="0">--Linn--</option>
-      <option v-for="city in citiesDropdownInputs" >{{ city.cityName }}</option>
+      <option v-for="city in citiesDropdownInputs">{{ city.cityName }}</option>
     </select>
   </div>
 </template>
