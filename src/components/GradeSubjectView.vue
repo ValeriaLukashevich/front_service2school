@@ -1,20 +1,11 @@
 <template>
-  <div>s
+  <div>
     <GradeCheckboxOptions :grades="grades"/>
-    <div>
-      <p class="text-start">Millistele ainetele sobib:</p>
-      <div v-for="subject in subjects" class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          {{ subject.subjectName }}
-        </label>
-
-      </div>
-    </div>
+    <SubjectCheckboxOptions :subjects="subjects"/>
     <br/>
     <div>
     <button type="button" class="btn btn-success">Tagasi</button>
-    <button type="button" class="btn btn-success">Edasi</button>
+    <button v-on:click="createOffer" type="button" class="btn btn-success">Edasi</button>
     </div>
   </div>
 
@@ -22,22 +13,26 @@
 
 <script>
 import GradeCheckboxOptions from "@/components/GradeCheckboxOptions";
+import SubjectCheckboxOptions from "@/views/SubjectCheckboxOptions";
 
 export default {
   name: "GradeSubjectView",
-  components: {GradeCheckboxOptions},
+  components: {SubjectCheckboxOptions, GradeCheckboxOptions},
   data: function () {
     return {
       grades: [
         {
           gradeId: 0,
-          gradeNumber: 0
+          gradeNumber: 0,
+          isSelected: false
         }
       ],
       subjects: [
         {
           subjectId: 0,
-          subjectName: ''
+          subjectName: '',
+          isSelected: false
+
         }
       ]
     }
@@ -64,7 +59,16 @@ export default {
                 console.log('Midagi läks valesti')
               }
           )
-    }
+    },
+    createOffer: function () {
+      this.$http.post("/some/path", this.somePayloadDtoObject
+      ).then(response => {
+        console.log(response.data)
+      }).catch(error => {
+        console.log(error)
+      })
+    },
+
   },
   beforeMount() {
     this.getGradeCheckbox()
