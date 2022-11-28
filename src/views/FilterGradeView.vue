@@ -1,19 +1,13 @@
 <template>
-  <div>
-    <p class="text-start">Millistele klassidele sobib:</p>
-    <div v-for="grade in grades" class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        {{ grade.gradeNumber }}
-      </label>
-    </div>
-
-  </div>
+  <GradeCheckboxOptions :grades="grades"/>
 </template>
 
 <script>
+import GradeCheckboxOptions from "@/components/GradeCheckboxOptions";
+
 export default {
   name: "FilterGradeView",
+  components: {GradeCheckboxOptions},
   data: function () {
     return {
       grades: [
@@ -43,6 +37,3 @@ export default {
 
 </script>
 
-<style scoped>
-
-</style>
