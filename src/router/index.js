@@ -1,47 +1,42 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import FilterGradeView from "@/views/FilterGradeView";
 import DropdownView from "@/views/DropdownView";
-import FilterSubjectView from "@/views/FilterSubjectView";
+import GradeSubjectView from "@/components/GradeSubjectView";
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/filter/grade',
-    name: 'gradeRoute',
-    component: FilterGradeView
-  },
-  {
-    path: '/views/db',
-    name: 'dbRoute',
-    component: DropdownView
-  },
-  {
-    path: '/filter/subject',
-    name: 'subjectRoute',
-    component: FilterSubjectView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    {
+        path: '/',
+        name: 'home',
+        component: HomeView
+    },
+    {
+        path: '/views/db',
+        name: 'dbRoute',
+        component: DropdownView
+    },
+    {
+        path: '/grade-subject',
+        name: 'gradeSubjectRoute',
+        component: GradeSubjectView
+    },
+
+    {
+        path: '/about',
+        name: 'about',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: function () {
+            return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+        }
     }
-  }
 ]
 
 const router = new VueRouter({
-  routes
+    routes
 })
 
 export default router
