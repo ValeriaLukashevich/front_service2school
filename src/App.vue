@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/filter/grade">Grades</router-link> |
       <router-link to="/views/db">Cities</router-link> |
+      <router-link to="/login">Login</router-link> |
       <router-link to="/filter/subject">Subjects</router-link>
     </nav>
     <router-view/>
