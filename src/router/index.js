@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import DropdownView from "@/views/DropdownView";
 import LoginView from "@/views/LoginView";
 import GradeSubjectView from "@/components/GradeSubjectView";
+import ProfileView from "@/views/ProfileView";
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/login',
     name: 'loginRoute',
     component: LoginView
+  },
+  {
+    path: '/profile',
+    name: 'profileRoute',
+    component: ProfileView
   },
   {
     path: '/grade-subject',

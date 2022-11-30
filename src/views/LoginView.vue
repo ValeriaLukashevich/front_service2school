@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <h3>Login</h3>
@@ -7,14 +6,15 @@
 
       <div>
         <span class="input-group-text" id="basic-addon1">email</span>
-        <input v-model="email" type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
+        <input v-model="email" type="text" class="form-control" placeholder="email" aria-label="email"
+               aria-describedby="basic-addon1">
       </div>
       <div>
         <span class="input-group-text" id="basic-addon1">password</span>
-        <input v-model="password" type="text" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
+        <input v-model="password" type="text" class="form-control" placeholder="password" aria-label="password"
+               aria-describedby="basic-addon1">
       </div>
       <button v-on:click="login" type="button" class="btn btn-primary">logi sisse</button>
-
 
 
     </div>
@@ -27,10 +27,19 @@ export default {
   data: function () {
     return {
       email: '',
-      password: ''
+      password: '',
+
+      loginResponse: {
+        userId: 0,
+      },
+      errorResponse: {
+        message: '',
+        errorCode: 0
+      },
     }
   },
   methods: {
+
     login: function () {
       this.$http.get("/login", {
             params: {
@@ -39,15 +48,28 @@ export default {
             }
           }
       ).then(response => {
-        console.log(response.data)
+        this.loginResponse = response.data
+        this.navigateToProfile();
       }).catch(error => {
         console.log(error)
       })
     },
-  }
+
+    navigateToProfile: function () {
+      console.log('Olen siin')
+      sessionStorage.setItem('userId', this.loginResponse.userId);
+      this.$router.push({
+        name: 'profileRoute', query: {
+          userId: this.userId
+        }
+      })
+    }
+
+
+  },
+
+
 }
+
 </script>
 
-<style scoped>
-
-</style>

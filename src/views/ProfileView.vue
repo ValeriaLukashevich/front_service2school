@@ -1,11 +1,32 @@
 <template>
-  <div>
-  <div>
-    <h1>Minu konto info:</h1>
-    <h2>
+  <div class="ms-5 col-4">
+  <table class="table table-success table-striped">
+    <thead>
+    <tr>
+      <th>Konto info:</th>
+      <th> </th>
 
-    </h2>
-  </div>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">Eesnimi:</th>
+      <td> {{ contact.contactFirstName }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Perenimi</th>
+      <td> {{ contact.contactLastName }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Kontakt telefon:</th>
+      <td colspan="2">{{ contact.contactPhone }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Asutus:</th>
+      <td colspan="2">{{ contact.contactInstitution }}</td>
+    </tr>
+    </tbody>
+  </table>
   </div>
 </template>
 
@@ -14,36 +35,41 @@ export default {
   name: "ProfileView",
   data: function () {
     return {
-      contact: [
-        {
-          contactId: 0,
-          contactFirstName: '',
-          contactLastName: '',
-          contactPhone: '',
-          contactInstitution: '',
+      userId: Number(sessionStorage.getItem('userId')),
+      contact:
+          {
+            contactId: 0,
+            contactFirstName: '',
+            contactLastName: '',
+            contactPhone: '',
+            contactInstitution: ''
+          }
 
-        }
-      ]
     }
 
   },
   methods: {
     getContactInfo: function () {
-      this.$http.get("/contact")
-          .then(response => {
-            this.contact = response.data
-          })
-          .catch(error => {
-            console.log(error)
-          })
+
+      this.$http.get("/profile", {
+            params: {
+              userId: this.userId
+            }
+          }
+      ).then(response => {
+        this.contact = response.data
+      }).catch(error => {
+        console.log(error)
+      })
     },
-    beforeMount() {
-      this.getContactInfo()
-    }
+
+
+  },
+  beforeMount() {
+    this.getContactInfo()
   }
 }
+
+
 </script>
 
-<style scoped>
-
-</style>
