@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import FilterGradeView from "@/views/FilterGradeView";
 import DropdownView from "@/views/DropdownView";
-import FilterSubjectView from "@/views/FilterSubjectView";
+import LoginView from "@/views/LoginView";
+import GradeSubjectView from "@/components/GradeSubjectView";
 
 Vue.use(VueRouter)
 
