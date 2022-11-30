@@ -22,7 +22,7 @@ export default {
 
   },
   methods: {
-    getcitiesDropdownInputs: function () {
+    getCitiesDropdownInputs: function () {
       this.$http.get("/views/db")
           .then(response => {
             this.citiesDropdownInputs = response.data
@@ -33,7 +33,7 @@ export default {
     },
   },
   beforeMount() {
-    this.getcitiesDropdownInputs()
+    this.getCitiesDropdownInputs()
   }
 }
 </script>
