@@ -27,7 +27,15 @@ export default {
   data: function () {
     return {
       email: '',
-      password: ''
+      password: '',
+
+      loginResponse: {
+        userId: 0,
+      },
+      errorResponse: {
+        message: '',
+        errorCode: 0
+      },
     }
   },
   methods: {
@@ -39,12 +47,27 @@ export default {
             }
           }
       ).then(response => {
-        console.log(response.data)
+        this.loginResponse = response.data
+        this.navigateToProfile();
       }).catch(error => {
         console.log(error)
       })
     },
-  }
+
+    navigateToProfile: function () {
+      console.log('Olen siin')
+      sessionStorage.setItem('userId', this.loginResponse.userId);
+      this.$router.push({
+        name: 'profileRoute', query: {
+          userId: this.userId
+        }
+      })
+    }
+
+
+  },
+
+
 }
 </script>
 
