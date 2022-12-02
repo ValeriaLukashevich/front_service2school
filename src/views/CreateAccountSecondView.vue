@@ -2,19 +2,19 @@
   <div>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
-      <input type="text" class="form-control" aria-label="Sizing example input">
+      <input v-model="contactRequest.firstName" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
       <span class="input-group-text" id="inputGroup-sizing-lg">Perekonnanimi:</span>
-      <input type="text" class="form-control" aria-label="Sizing example input">
+      <input v-model="contactRequest.lastName" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
       <span class="input-group-text" id="inputGroup-sizing-lg">Asutuse nimi:</span>
-      <input type="text" class="form-control" aria-label="Sizing example input">
+      <input v-model="contactRequest.institution" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
       <span class="input-group-text" id="inputGroup-sizing-lg">Kontakttelefon:</span>
-      <input type="text" class="form-control" aria-label="Sizing example input">
+      <input v-model="contactRequest.phone" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <button v-on:click="navigateBack" type="button" class="btn btn-primary">Tagasi</button>
     <button v-on:click="addNewContact" type="button" class="btn btn-primary">Salvesta</button>
@@ -39,10 +39,11 @@ export default {
   },
   methods: {
     addNewContact: function () {
-      this.$http.post("/some/path", this.contactRequest
+      this.$http.post("/contact", this.contactRequest
       ).then(response => {
         // ÕNNELIK SÕNuMi SAATMINE
-        // kurtsume siit välja navigate to next page
+
+        this.navigateToProfile()
         console.log(response.data)
       }).catch(error => {
         console.log(error)
@@ -50,7 +51,15 @@ export default {
     },
 
 
+    navigateToProfile: function () {
+      // sessionStorage.setItem('userId', this.newUserResponse.userId)
+      this.$router.push({
+        name: 'profileRoute'
+      })
+    },
+
     navigateBack: function () {
+
       this.$router.push({
         name: 'newAccount1Route'
       })

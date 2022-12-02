@@ -23,7 +23,7 @@ const routes = [
     component: DropdownView
   },
   {
-    path: '/login',
+    path: '/loginRequest',
     name: 'loginRoute',
     component: LoginView
   },

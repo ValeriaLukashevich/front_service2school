@@ -1,11 +1,12 @@
 <template>
   <div>
+    <AlertError :message="errorResponse.message"/>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Email:</span>
       <input v-model="newUserRequest.email" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
-      <span class="input-group-text" id="inputGroup-sizing-lg">Parool:</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg">Parool (vähemalt 3 sümbolid):</span>
       <input v-model="newUserRequest.password" type="password" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
@@ -13,13 +14,18 @@
       <input type="password" class="form-control" aria-label="Sizing example input">
     </div>
     <br>
-    <button v-on:click="addNewUser" type="button" class="btn btn-primary">Edasi</button>
+    <button v-on:click="createNewAccount" type="button" class="btn btn-primary">Edasi</button>
   </div>
 </template>
 
+
 <script>
+
+import AlertError from "@/components/alert/AlertError";
+
 export default {
   name: "CreateAccountFirstView",
+  components: {AlertError},
   data: function () {
     return {
       newUserRequest: {
@@ -28,14 +34,28 @@ export default {
       },
       newUserResponse: {
         userId: 0,
-      }
+      },
+      errorResponse: {
+        message: '',
+        errorCode: 0
+      },
     }
   },
 
   methods: {
+    createNewAccount: function () {
+      this.errorResponse.message = ''
+      if (this.newUserRequest.email.length == 0 || this.newUserRequest.password.length == 0) {
+        this.displayRequiredFieldsNotFilledAlert();
+      } else if (this.newUserRequest.email.length < 3 || this.newUserRequest.password.length < 3) {
+        this.displayTooShortEmailAndPassword();
+      } else {
+        this.addNewUser()
+      }
+    },
+
 
     addNewUser: function () {
-
       this.$http.post("/profile", this.newUserRequest
       ).then(response => {
         this.newUserResponse = response.data
@@ -46,15 +66,20 @@ export default {
     },
 
 
-
-
     navigateToCreateAccountSecond: function () {
       sessionStorage.setItem('userId', this.newUserResponse.userId)
       this.$router.push({
         name: 'newAccount2Route'
       })
-    }
+    },
 
+    displayRequiredFieldsNotFilledAlert: function () {
+      this.errorResponse.message = 'Täida kõik väljad';
+    },
+
+    displayTooShortEmailAndPassword() {
+      this.errorResponse.message = 'Liiga lühike kasutaja email ja/või parool';
+    }
   }
 }
 </script>
