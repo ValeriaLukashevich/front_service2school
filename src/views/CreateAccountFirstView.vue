@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ms-5 col-4">
     <AlertError :message="errorResponse.message"/>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Email:</span>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+
   <div class="d-grid gap-3">
     <h4 class="w-25 ms-5 col-2">Viis viimast pakkumist</h4>
 
@@ -27,7 +27,7 @@
       </table>
     </div>
   </div>
-  </div>
+
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ms-5 col-4">
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
       <input v-model="contactRequest.firstName" type="text" class="form-control" aria-label="Sizing example input">
