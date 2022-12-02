@@ -1,19 +1,21 @@
 
 <template>
   <div>
-    <h3>Login</h3>
-    <div class="button">
+
+    <div class="ms-5 col-4">
 
 
       <div class="w-50">
         <span class="input-group-text mb-3" id="basic-addon1">email</span>
         <input v-model="email" type="text" class="form-control" placeholder="email" aria-label="email" aria-describedby="basic-addon1">
       </div>
-      <div class="w-25">
+      <div class="w-50">
         <span class="input-group-text" id="basic-addon1">password</span>
-        <input v-model="password" type="text" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
+        <input v-model="password" type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
       </div>
-      <button v-on:click="login" type="button" class="btn btn-primary">logi sisse</button>
+      <button v-on:click="login" type="button" class="btn btn-primary">Logi sisse</button>
+      <br> <br>
+      <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-primary">Loo konto</button>
 
 
 
@@ -55,12 +57,19 @@ export default {
     },
 
     navigateToProfile: function () {
-      console.log('Olen siin')
+      // console.log('Olen siin')
       sessionStorage.setItem('userId', this.loginResponse.userId);
       this.$router.push({
         name: 'profileRoute', query: {
           userId: this.userId
         }
+      })
+    },
+
+    navigateToCreateAccountFirst: function () {
+      this.$router.push({
+        name: 'newAccount1Route'
+
       })
     }
 

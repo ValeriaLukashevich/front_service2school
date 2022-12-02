@@ -5,6 +5,8 @@ import DropdownView from "@/views/DropdownView";
 import LoginView from "@/views/LoginView";
 import GradeSubjectView from "@/components/GradeSubjectView";
 import ProfileView from "@/views/ProfileView";
+import CreateAccountFirstView from "@/views/CreateAccountFirstView";
+import CreateAccountSecondView from "@/views/CreateAccountSecondView";
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,16 @@ const routes = [
     path: '/grade-subject',
     name: 'gradeSubjectRoute',
     component: GradeSubjectView
+  },
+  {
+    path: '/new-account1',
+    name: 'newAccount1Route',
+    component: CreateAccountFirstView
+  },
+    {
+    path: '/new-account2',
+    name: 'newAccount2Route',
+    component: CreateAccountSecondView
   },
   {
     path: '/about',
