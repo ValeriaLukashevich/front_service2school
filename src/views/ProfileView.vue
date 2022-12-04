@@ -27,6 +27,9 @@
     </tr>
     </tbody>
   </table>
+    <div class="d-grid gap-2 d-md-block my-5">
+      <button v-on:click="navigateToAddNewOffer" class="btn btn-primary mx-1" type="button">Loo pakkumus</button>
+      </div>
   </div>
 </template>
 
@@ -62,7 +65,11 @@ export default {
         console.log(error)
       })
     },
-
+    navigateToAddNewOffer: function () {
+      this.$router.push({
+        name: 'stageOneRoute'
+      })
+    }
 
   },
   beforeMount() {

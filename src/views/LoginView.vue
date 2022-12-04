@@ -86,7 +86,6 @@ export default {
     navigateToCreateAccountFirst: function () {
       this.$router.push({
         name: 'newAccount1Route'
-
       })
     }
 
