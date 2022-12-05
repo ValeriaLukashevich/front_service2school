@@ -1,60 +1,67 @@
 <template>
-<div class="col-3 mx-3 my-3">
-  <h3>Sisesta oma pakkumus.</h3>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Pakkumuse nimi</span>
+  <div class="col-3 mx-3 my-3">
+    <h3>Sisesta oma pakkumus.</h3>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Pakkumuse nimi</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.name" type="text" class="form-control" placeholder="Pakkumuse nimi"
+             aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Pakkumuse nimi" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div class="input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text">Pakkumuse kirjeldus</span>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Pakkumuse kirjeldus</span>
+      </div>
+      <textarea v-model="addOfferFirstStageRequest.description" class="form-control" placeholder="Pakkumuse kirjeldus"
+                aria-label="Username"></textarea>
     </div>
-    <textarea class="form-control" aria-label="Pakkumuse kirjaldus"></textarea>
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Pakkumuse hind õpilase kohta</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Pakkumuse hind õpilase kohta</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.pricePerStudent" type="text" class="form-control"
+             placeholder="Pakkumuse hind õpilase kohta" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Pakkumuse hind õpilase kohta" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Õpilaste arv min</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Õpilaste arv min</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.studentsMin" type="text" class="form-control"
+             placeholder="Õpilaste arv min" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Õpilaste arv min" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Õpilaste arv max</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Õpilaste arv max</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.studentsMax" type="text" class="form-control"
+             placeholder="Õpilaste arv max" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Õpilaste arv max" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.address" type="text" class="form-control" placeholder="Telefoninumber"
+             aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Telefoninumber" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="basic-addon1">Aadress</span>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Aadress</span>
+      </div>
+      <input v-model="addOfferFirstStageRequest.phone" type="text" class="form-control" placeholder="Aadress"
+             aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <input type="text" class="form-control" placeholder="Aadress" aria-label="Username" aria-describedby="basic-addon1">
-  </div>
-  <div>
-    <select class="form-select" aria-label="Default select example">
-      <option selected disabled value="0">--Linn--</option>
-      <option v-for="city in citiesDropdownInputs">{{ city.cityName }}</option>
-    </select>
-  </div>
-  <div class="d-grid gap-2 d-md-block my-5">
-    <button class="btn btn-primary mx-1" type="button">Button</button>
-    <button v-on:click="" class="btn btn-primary" type="button">Edasi</button>
-  </div>
+    <div>
+      <select class="form-select" aria-label="Default select example">
+        <option selected disabled value="0">--Linn--</option>
+        <option v-for="city in citiesDropdownInputs">{{ city.cityName }}</option>
+      </select>
+    </div>
+    <div class="d-grid gap-2 d-md-block my-5">
+      <button class="btn btn-primary mx-1" type="button">Button</button>
+      <button v-on:click="createNewOfferFirstStage" class="btn btn-primary" type="button">Edasi</button>
+    </div>
 
-</div>
+  </div>
 </template>
 
 <script>
@@ -67,7 +74,24 @@ export default {
           cityId: 0,
           cityName: ''
         }
-      ]
+      ],
+      addOfferFirstStageRequest: {
+        name: '',
+        description: '',
+        pricePerStudent: 0,
+        studentsMin: 0,
+        studentsMax: 0,
+        address: '',
+        phone: 0
+      },
+      addOfferFirstStageResponse: {
+        userId: 0,
+        cityId: 0
+      },
+      errorResponse: {
+        message: '',
+        errorCode: 0
+      }
     }
 
   },
@@ -80,6 +104,36 @@ export default {
           .catch(error => {
             console.log(error)
           })
+    },
+    createNewOfferFirstStage: function () {
+      this.errorResponse.message = ''
+      if (this.addOfferFirstStageRequest.name.length == 0 || this.addOfferFirstStageRequest.description.length == 0 ||
+          this.addOfferFirstStageRequest.pricePerStudent.length == 0 || this.addOfferFirstStageRequest.studentsMin.length == 0 ||
+      this.addOfferFirstStageRequest.studentsMax.length == 0 || this.addOfferFirstStageRequest.address.length == 0 ||
+          this.addOfferFirstStageRequest.phone.length == 0
+    ) {
+        this.displayRequiredFieldsNotFilledAlert();
+      } else {
+        this.addNewOffer()
+      }
+    },
+    addNewOffer: function () {
+      this.$http.post("/offer", this.addOfferFirstStageRequest
+      ).then(response => {
+       this.addOfferFirstStageResponse = response.data
+       this.navigateToSecondStage()
+      }).catch(error => {
+        console.log(error)
+      })
+    },
+    navigateToSecondStage: function () {
+      sessionStorage.setItem('offerId', this.addOfferFirstStageResponse.off)
+      this.$router.push({
+        name: 'newAccount2Route'
+      })
+    },
+    displayRequiredFieldsNotFilledAlert: function () {
+      this.errorResponse.message = 'Täida kõik väljad';
     },
   },
   beforeMount() {
