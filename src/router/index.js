@@ -7,10 +7,16 @@ import ProfileView from "@/views/ProfileView";
 import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
 import AddOfferStageOneView from "@/views/AddOfferStageOneView.vue";
+import AddOfferStageTwoView from "@/views/AddOfferStageTwoView.vue";
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/stageTwo',
+    name: 'stageTwoRoute',
+    component: AddOfferStageTwoView
+  },
   {
     path: '/stageOne',
     name: 'stageOneRoute',

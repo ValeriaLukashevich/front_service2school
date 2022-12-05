@@ -38,22 +38,22 @@
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
+        <span class="input-group-text" id="basic-addon1">Aadress</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.address" type="text" class="form-control" placeholder="Telefoninumber"
+      <input v-model="addOfferFirstStageRequest.address" type="text" class="form-control" placeholder="Aadress"
              aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Aadress</span>
+        <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.phone" type="text" class="form-control" placeholder="Aadress"
+      <input v-model="addOfferFirstStageRequest.phone" type="text" class="form-control" placeholder="Telefoninumber"
              aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div>
-      <select class="form-select" aria-label="Default select example">
+      <select v-model="addOfferFirstStageRequest.cityId" class="form-select" aria-label="Default select example">
         <option selected disabled value="0">--Linn--</option>
-        <option v-for="city in citiesDropdownInputs">{{ city.cityName }}</option>
+        <option v-for="city in citiesDropdownInputs" :key="city.cityId" :value="city.cityId">{{ city.cityName }}</option>
       </select>
     </div>
     <div class="d-grid gap-2 d-md-block my-5">
@@ -76,6 +76,8 @@ export default {
         }
       ],
       addOfferFirstStageRequest: {
+        userId: Number(sessionStorage.getItem('userId')),
+        cityId: 0,
         name: '',
         description: '',
         pricePerStudent: 0,
@@ -85,8 +87,7 @@ export default {
         phone: 0
       },
       addOfferFirstStageResponse: {
-        userId: 0,
-        cityId: 0
+        offerId: 0
       },
       errorResponse: {
         message: '',
@@ -118,7 +119,7 @@ export default {
       }
     },
     addNewOffer: function () {
-      this.$http.post("/offer", this.addOfferFirstStageRequest
+      this.$http.post("/home/offer", this.addOfferFirstStageRequest
       ).then(response => {
        this.addOfferFirstStageResponse = response.data
        this.navigateToSecondStage()
@@ -129,7 +130,7 @@ export default {
     navigateToSecondStage: function () {
       sessionStorage.setItem('offerId', this.addOfferFirstStageResponse.off)
       this.$router.push({
-        name: 'newAccount2Route'
+        name: 'stageTwoRoute'
       })
     },
     displayRequiredFieldsNotFilledAlert: function () {
