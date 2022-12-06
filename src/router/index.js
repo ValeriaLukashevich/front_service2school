@@ -7,6 +7,7 @@ import GradeSubjectView from "@/components/GradeSubjectView";
 import ProfileView from "@/views/ProfileView";
 import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
+import AddPictureView from "@/views/AddPictureView";
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/picture',
+    name: 'pictureRoute',
+    component: AddPictureView
   },
 
   {
