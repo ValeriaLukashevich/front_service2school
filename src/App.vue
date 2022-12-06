@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/loginRequest">Login</router-link>
-    </nav>
-    <router-view/>
-  </div>
+    <div id="app">
+          <nav>
+            <router-link to="/" type="button" class="btn btn-outline-success">Home</router-link>
+            <router-link to="/about" type="button" class="btn btn-outline-success">Teenused</router-link>
+            <router-link to="/loginRequest" type="button" class="btn btn-outline-success">Login</router-link>
+          </nav>
+          <router-view/>
+
+    </div>
+
+
 </template>
 
 <style>
@@ -31,3 +34,7 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
+<script>export default {
+  components: {}
+}
+</script>

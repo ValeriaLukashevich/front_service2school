@@ -1,4 +1,5 @@
 <template>
+  <div class="mx-auto">
   <div class="ms-5 col-4">
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
@@ -16,8 +17,9 @@
       <span class="input-group-text" id="inputGroup-sizing-lg">Kontakttelefon:</span>
       <input v-model="contactRequest.phone" type="text" class="form-control" aria-label="Sizing example input">
     </div>
-    <button v-on:click="navigateBack" type="button" class="btn btn-primary">Tagasi</button>
-    <button v-on:click="addNewContact" type="button" class="btn btn-primary">Salvesta</button>
+    <button v-on:click="navigateBack" type="button" class="btn btn-success">Tagasi</button>
+    <button v-on:click="addNewContact" type="button" class="btn btn-success">Salvesta</button>
+  </div>
   </div>
 </template>
 
@@ -33,7 +35,17 @@ export default {
         phone: '',
         institution: '',
         userId: Number(sessionStorage.getItem('userId'))
-      }
+      },
+      contactResponse: {
+        firstName: '',
+        lastName: '',
+        phone: '',
+        institution: '',
+      },
+      errorResponse: {
+        message: '',
+        errorCode: 0
+      },
     }
 
   },
@@ -41,10 +53,8 @@ export default {
     addNewContact: function () {
       this.$http.post("/contact", this.contactRequest
       ).then(response => {
-        // ÕNNELIK SÕNuMi SAATMINE
-
+        this.contactResponse = response.data;
         this.navigateToProfile()
-        console.log(response.data)
       }).catch(error => {
         console.log(error)
       })

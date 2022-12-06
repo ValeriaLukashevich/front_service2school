@@ -1,3 +1,14 @@
 .myBackground {
 
+    /*border: 10px dashed black;*/
+    padding: 25px;
+    background: darkcyan;
+    /*background-repeat: repeat-x;*/
+    background-size: cover;
+    /*background-blend-mode: lighten;*/
+    /*background-origin: content-box;*/
+}
+
+.myPicSize {
+    height: 300px;
 }

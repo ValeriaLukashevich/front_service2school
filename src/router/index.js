@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import DropdownView from "@/views/DropdownView";
 import LoginView from "@/views/LoginView";
 import GradeSubjectView from "@/components/GradeSubjectView";
 import ProfileView from "@/views/ProfileView";
 import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
-import AddOfferStageOneView from "@/views/AddOfferStageOneView.vue";
-import AddOfferStageTwoView from "@/views/AddOfferStageTwoView.vue";
 
 Vue.use(VueRouter)
 
@@ -26,6 +25,17 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/picture',
+    name: 'pictureRoute',
+    component: AddPictureView
+  },
+
+  {
+    path: '/views/db',
+    name: 'dbRoute',
+    component: DropdownView
   },
   {
     path: '/loginRequest',

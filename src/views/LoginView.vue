@@ -14,9 +14,9 @@
         <input v-model="password" type="password" class="form-control" placeholder="password" aria-label="password"
                aria-describedby="basic-addon1">
       </div>
-      <button v-on:click="login" type="button" class="btn btn-primary">Logi sisse</button>
+      <button v-on:click="login" type="button" class="btn btn-success">Logi sisse</button>
       <br> <br>
-      <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-primary">Loo konto</button>
+      <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-success">Loo konto</button>
 
 
     </div>
