@@ -58,7 +58,7 @@
     </div>
     <div class="d-grid gap-2 d-md-block my-5">
       <button class="btn btn-primary mx-1" type="button">Button</button>
-      <button v-on:click="createNewOfferFirstStage" class="btn btn-primary" type="button">Edasi</button>
+      <button v-on:click="createNewOfferFirstStage" class="btn btn-success" type="button">Edasi</button>
     </div>
 
   </div>
