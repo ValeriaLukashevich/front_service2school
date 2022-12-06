@@ -1,26 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import DropdownView from "@/views/DropdownView";
 import LoginView from "@/views/LoginView";
 import GradeSubjectView from "@/components/GradeSubjectView";
 import ProfileView from "@/views/ProfileView";
 import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
+import AddOfferStageTwoView from "@/views/AddOfferStageTwoView";
+import AddOfferStageOneView from "@/views/AddOfferStageOneView";
+import AddPictureView from "@/views/AddPictureView";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/stageTwo',
+    name: 'stageTwoRoute',
+    component: AddOfferStageTwoView
+  },
+  {
+    path: '/stageOne',
+    name: 'stageOneRoute',
+    component: AddOfferStageOneView
+  },
+  {
     path: '/',
     name: 'home',
     component: HomeView
   },
-
   {
-    path: '/views/db',
-    name: 'dbRoute',
-    component: DropdownView
+    path: '/picture',
+    name: 'pictureRoute',
+    component: AddPictureView
   },
   {
     path: '/loginRequest',

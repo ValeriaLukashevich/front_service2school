@@ -14,7 +14,7 @@
       <input type="password" class="form-control" aria-label="Sizing example input">
     </div>
     <br>
-    <button v-on:click="createNewAccount" type="button" class="btn btn-primary">Edasi</button>
+    <button v-on:click="createNewAccount" type="button" class="btn btn-success">Edasi</button>
   </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
       this.errorResponse.message = ''
       if (this.newUserRequest.email.length == 0 || this.newUserRequest.password.length == 0) {
         this.displayRequiredFieldsNotFilledAlert();
-      } else if (this.newUserRequest.email.length < 3 || this.newUserRequest.password.length < 3) {
+      } else if (this.newUserRequest.email.length < 2 || this.newUserRequest.password.length < 2) {
         this.displayTooShortEmailAndPassword();
       } else {
         this.addNewUser()

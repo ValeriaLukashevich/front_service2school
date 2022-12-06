@@ -56,9 +56,7 @@ export default {
           })
     },
 
-    navigateToPage: function (offerId) {
-      alert(offerId)
-    }
+
 
   },
   beforeMount() {
