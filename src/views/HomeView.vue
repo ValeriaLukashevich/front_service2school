@@ -1,6 +1,7 @@
 <template>
     <div>
-      <h5>Viis viimati lisatud teenust:</h5>
+      <img alt="Vue logo" src="../assets/s2c-logo.png">
+      <h4>Viis viimati lisatud teenust:</h4>
 
 <table class="table table-success table-striped">
         <thead>
