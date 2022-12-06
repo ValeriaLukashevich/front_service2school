@@ -1,9 +1,9 @@
 <template>
     <div id="app">
           <nav>
-            <router-link to="/" type="button" class="btn btn-outline-success">Home</router-link>
-            <router-link to="/about" type="button" class="btn btn-outline-success">Teenused</router-link>
-            <router-link to="/loginRequest" type="button" class="btn btn-outline-success">Login</router-link>
+            <router-link to="/" type="button" class="btn btn-outline-success m-1">Home</router-link>
+            <router-link to="/about" type="button" class="btn btn-outline-success m-1">Teenused</router-link>
+            <router-link to="/loginRequest" type="button" class="btn btn-outline-success m-1">Login</router-link>
           </nav>
           <router-view/>
 

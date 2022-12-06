@@ -4,22 +4,21 @@
     <div class="ms-5 col-4">
       <AlertError :message="errorResponse.message"/>
 
-      <div class="w-50">
-        <span class="input-group-text mb-3" id="basic-addon1">email</span>
+      <div class="w-70">
+        Sisesta e-mail:
         <input v-model="email" type="text" class="form-control" placeholder="email" aria-label="email"
                aria-describedby="basic-addon1">
       </div>
-      <div class="w-50">
-        <span class="input-group-text" id="basic-addon1">password</span>
+
+      <div class="w-70">
+        Siseta parool:
         <input v-model="password" type="password" class="form-control" placeholder="password" aria-label="password"
                aria-describedby="basic-addon1">
+                <button v-on:click="login" type="button" class="btn btn-primary m-2">Logi sisse</button>
+        <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-primary">Loo konto</button>
       </div>
-      <button v-on:click="login" type="button" class="btn btn-success">Logi sisse</button>
-      <br> <br>
-      <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-success">Loo konto</button>
+        </div>
 
-
-    </div>
   </div>
 </template>
 
