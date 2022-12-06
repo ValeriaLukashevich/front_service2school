@@ -1,5 +1,7 @@
 <template>
     <div>
+      <h5>Viis viimati lisatud teenust:</h5>
+
 <table class="table table-success table-striped">
         <thead>
         <tr>

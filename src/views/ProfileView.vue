@@ -1,6 +1,7 @@
 <template>
   <div class="ms-5 col-4">
   <table class="table table-success table-striped">
+
     <thead>
     <tr>
       <th colspan="2">Konto info</th>
