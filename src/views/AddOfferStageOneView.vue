@@ -130,7 +130,7 @@ export default {
     navigateToSecondStage: function () {
       sessionStorage.setItem('offerId', this.addOfferFirstStageResponse.off)
       this.$router.push({
-        name: 'stageTwoRoute'
+        name: 'gradeSubjectRoute'
       })
     },
     displayRequiredFieldsNotFilledAlert: function () {
