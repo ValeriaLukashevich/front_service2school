@@ -1,12 +1,22 @@
 .myBackground {
 
-    /*border: 10px dashed black;*/
-    padding: 25px;
-    background: darkcyan;
-    /*background-repeat: repeat-x;*/
-    background-size: cover;
-    /*background-blend-mode: lighten;*/
-    /*background-origin: content-box;*/
+    /*    !*border: 10px dashed black;*!*/
+    /*    padding: 25px;*/
+    /*    background: darkcyan;*/
+    /*    !*background-repeat: repeat-x;*!*/
+    /*    background-size: cover;*/
+    /*    !*background-blend-mode: lighten;*!*/
+    /*    !*background-origin: content-box;*!*/
+    /*}*/
+
+    /*!*table, th, td {*!*/
+    /*!*    border: 1px solid white;*!*/
+    /*!*    border-collapse: collapse;*!*/
+    /*!*}*!*/
+    /*!*th, td {*!*/
+    /*!*    background-color: #96D4D4;*!*/
+    /*!*}*!*/
+
 }
 
 .myPicSize {

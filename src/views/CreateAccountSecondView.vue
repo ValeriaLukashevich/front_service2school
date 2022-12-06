@@ -1,6 +1,6 @@
 <template>
-  <div class="mx-auto">
-  <div class="ms-5 col-4">
+  <div style="width: 500px; margin: auto">
+  <div>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
       <input v-model="contactRequest.firstName" type="text" class="form-control" aria-label="Sizing example input">
@@ -17,8 +17,8 @@
       <span class="input-group-text" id="inputGroup-sizing-lg">Kontakttelefon:</span>
       <input v-model="contactRequest.phone" type="text" class="form-control" aria-label="Sizing example input">
     </div>
-    <button v-on:click="navigateBack" type="button" class="btn btn-success">Tagasi</button>
-    <button v-on:click="addNewContact" type="button" class="btn btn-success">Salvesta</button>
+    <button v-on:click="navigateBack" type="button" class="btn btn-success m-1">Tagasi</button>
+    <button v-on:click="addNewContact" type="button" class="btn btn-success m-1">Salvesta</button>
   </div>
   </div>
 </template>

@@ -1,40 +1,29 @@
 <template>
-    <div id="app">
-          <nav>
-            <router-link to="/" type="button" class="btn btn-outline-success m-1">Home</router-link>
-            <router-link to="/about" type="button" class="btn btn-outline-success m-1">Teenused</router-link>
-            <router-link to="/loginRequest" type="button" class="btn btn-outline-success m-1">Login</router-link>
-          </nav>
-          <router-view/>
-
-    </div>
-
-
+  <div id="app">
+    <nav>
+      <router-link to="/" type="button" class="btn btn-outline-success m-1">Kodu</router-link>
+      <router-link to="/about" type="button" class="btn btn-outline-success m-1">Teenused</router-link>
+      <router-link to="/loginRequest" type="button" class="btn btn-outline-success m-1">Login</router-link>
+    </nav>
+    <router-view/>
+  </div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  max-width: 960px;
+  margin: auto;
 }
 
 nav {
   padding: 30px;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
-<script>export default {
+
+<script>
+document.title = "Service 2 School";
+export default {
   components: {}
 }
 </script>

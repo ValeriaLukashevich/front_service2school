@@ -1,16 +1,16 @@
 <template>
   <div>
 
-    <div class="ms-5 col-4">
+    <div>
       <AlertError :message="errorResponse.message"/>
 
-      <div class="w-70">
+      <div style="width: 300px; margin: auto">
         Sisesta e-mail:
         <input v-model="email" type="text" class="form-control" placeholder="email" aria-label="email"
                aria-describedby="basic-addon1">
       </div>
 
-      <div class="w-70">
+      <div style="width: 300px; margin: auto">
         Siseta parool:
         <input v-model="password" type="password" class="form-control" placeholder="password" aria-label="password"
                aria-describedby="basic-addon1">
@@ -21,6 +21,7 @@
 
   </div>
 </template>
+
 
 <script>
 import AlertError from "@/components/alert/AlertError";
