@@ -1,12 +1,12 @@
 <template>
-  <div class="ms-5 col-4">
+  <div style="width: 500px; margin: auto">
     <AlertError :message="errorResponse.message"/>
     <div class="input-group input-group-lg">
-      <span class="input-group-text">Email:</span>
+      <span class="input-group-text">E-mail:</span>
       <input v-model="newUserRequest.email" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">
-      <span class="input-group-text" id="inputGroup-sizing-lg">Parool (vähemalt 3 sümbolid):</span>
+      <span class="input-group-text" id="inputGroup-sizing-lg">Parool (min 3 sümbolit):</span>
       <input v-model="newUserRequest.password" type="password" class="form-control" aria-label="Sizing example input">
     </div>
     <div class="input-group input-group-lg">

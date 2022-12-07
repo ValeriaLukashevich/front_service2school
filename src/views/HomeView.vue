@@ -1,34 +1,45 @@
 <template>
+  <div>
+    <img alt="Vue logo" src="../assets/s2c-logo.png">
+    <h4>Viis viimati lisatud teenust:</h4>
 
-  <div class="d-grid gap-3">
-    <h4 class="w-25 ms-5 col-2">Viis viimast pakkumist</h4>
+    <table className="table table-success table-striped">
+      <thead>
+      <tr>
+        <th style="text-align:left">Nimetus</th>
+        <th style="text-align:left">Kirjeldus</th>
+        <th></th>
 
-    <div class="ms-3 col-8">
-      <table class="btn btn-outline-success">
-        <thead>
-        <tr>
-          <th scope="col">Pakkumine</th>
-          <th scope="col">Kirjeldus</th>
-          <th scope="col"></th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="offer in offers">
-          <td>{{ offer.offerName }}</td>
-          <td>{{ offer.offerDescription }}</td>
-          <td>
-            <button v-on:click="navigateToPage" :key="offer.offerId" type="button" class="btn btn-outline-warning">vaata</button>
-          </td>
-        </tr>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="offer in offers">
+        <td style="text-align:left;width: 30%">{{ offer.offerName }}</td>
+        <td style="text-align:left">{{ offer.offerDescription }}</td>
+        <td style="text-align:right;width: 10%">
+          <button v-on:click="navigateToPage(offer.offerId)" type="button" className="btn btn-info">Vaata</button>
+        </td>
+      </tr>
 
 
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
   </div>
 
 </template>
+
+<style>
+
+/*table, th, td {*/
+/*  border: 1px solid white;*/
+/*  border-collapse: collapse;*/
+/*}*/
+
+/*th, td {*/
+/*  background-color: #96D4D4;*/
+/*}*/
+
+</style>
 
 <script>
 export default {
@@ -50,17 +61,18 @@ export default {
       this.$http.get("/home")
           .then(response => {
             this.offers = response.data
-            ses
           })
           .catch(error => {
             console.log(error)
           })
     },
 
-    get
-
-
-
+    navigateToPage: function (offerId) {
+      sessionStorage.setItem('offerId', offerId)
+      this.$router.push({
+        name: 'detailViewRoute'
+      })
+    },
 
   },
   beforeMount() {

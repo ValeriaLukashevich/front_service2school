@@ -8,6 +8,7 @@ import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
 import AddOfferStageOneView from "@/views/AddOfferStageOneView";
 import AddPictureView from "@/views/AddPictureView";
+import DetailView from "@/views/DetailView";
 
 Vue.use(VueRouter)
 
@@ -52,6 +53,11 @@ const routes = [
     path: '/new-account2',
     name: 'newAccount2Route',
     component: CreateAccountSecondView
+  },
+  {
+    path: '/detail-view',
+    name: 'detailViewRoute',
+    component: DetailView
   },
   {
     path: '/about',

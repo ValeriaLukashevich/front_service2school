@@ -1,6 +1,7 @@
 <template>
-  <div class="mx-auto">
-  <div class="ms-5 col-4">
+  <div style="width: 500px; margin: auto">
+  <div>
+    <AlertError :message="errorResponse.message"/>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
       <input v-model="contactRequest.firstName" type="text" class="form-control" aria-label="Sizing example input">
@@ -17,16 +18,18 @@
       <span class="input-group-text" id="inputGroup-sizing-lg">Kontakttelefon:</span>
       <input v-model="contactRequest.phone" type="text" class="form-control" aria-label="Sizing example input">
     </div>
-    <button v-on:click="navigateBack" type="button" class="btn btn-success">Tagasi</button>
-    <button v-on:click="addNewContact" type="button" class="btn btn-success">Salvesta</button>
+    <button v-on:click="navigateBack" type="button" class="btn btn-success m-1">Tagasi</button>
+    <button v-on:click="createNewContact" type="button" class="btn btn-success m-1">Salvesta</button>
   </div>
   </div>
 </template>
 
 <script>
+import AlertError from "@/components/alert/AlertError";
 
 export default {
   name: "CreateAccountSecondView",
+  components: {AlertError},
   data: function () {
     return {
       contactRequest: {
@@ -50,6 +53,17 @@ export default {
 
   },
   methods: {
+    createNewContact: function () {
+      this.errorResponse.message = ''
+      if (this.contactRequest.firstName.length == 0 || this.contactRequest.lastName.length ==0 ||
+          this.contactRequest.institution.length == 0 || this.contactRequest.phone.length == 0) {
+        this.displayRequiredFieldsNotFilledAlert();
+      } else {
+        this.addNewContact()
+      }
+    },
+
+
     addNewContact: function () {
       this.$http.post("/contact", this.contactRequest
       ).then(response => {
@@ -74,7 +88,10 @@ export default {
         name: 'newAccount1Route'
       })
 
-    }
+    },
+    displayRequiredFieldsNotFilledAlert: function () {
+      this.errorResponse.message = 'Täida kõik väljad';
+    },
   }
 }
 </script>

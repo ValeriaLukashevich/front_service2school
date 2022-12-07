@@ -1,17 +1,48 @@
 .myBackground {
 
-    /*border: 10px dashed black;*/
-    padding: 25px;
-    background: darkcyan;
-    /*background-repeat: repeat-x;*/
-    background-size: cover;
-    /*background-blend-mode: lighten;*/
-    /*background-origin: content-box;*/
+    /*    !*border: 10px dashed black;*!*/
+    /*    padding: 25px;*/
+    /*    background: darkcyan;*/
+    /*    !*background-repeat: repeat-x;*!*/
+    /*    background-size: cover;*/
+    /*    !*background-blend-mode: lighten;*!*/
+    /*    !*background-origin: content-box;*!*/
+    /*}*/
+
+    /*!*table, th, td {*!*/
+    /*!*    border: 1px solid white;*!*/
+    /*!*    border-collapse: collapse;*!*/
+    /*!*}*!*/
+    /*!*th, td {*!*/
+    /*!*    background-color: #96D4D4;*!*/
+    /*!*}*!*/
+
 }
 
 .myPicSize {
     height: 300px;
 }
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+nav {
+    padding: 30px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+    color: #42b983;
+}
+
 .buttonPosition {
     bottom: 100px;
     left: 10px;
