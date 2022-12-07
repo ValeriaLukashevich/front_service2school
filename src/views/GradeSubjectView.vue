@@ -1,11 +1,11 @@
 <template>
   <div>
-    <GradeCheckboxOptions :grades="grades"/>
-    <SubjectCheckboxOptions :subjects="subjects"/>
+    <GradeCheckboxOptions :grades="checkBoxesRequest.grades"/>
+    <SubjectCheckboxOptions :subjects="checkBoxesRequest.subjects"/>
     <br/>
     <div>
     <button type="button" class="btn btn-success">Tagasi</button>
-    <button v-on:click="AddExtraOffer" type="button" class="btn btn-success">Edasi</button>
+    <button v-on:click="addGradeSubjectToOffer" type="button" class="btn btn-success">Edasi</button>
     </div>
   </div>
 
@@ -21,7 +21,7 @@ export default {
   data: function () {
     return {
       checkBoxesRequest: {
-        offerId: Number(sessionStorage.getItem('userId')),
+        offerId: Number(sessionStorage.getItem('offerId')),
         grades: [
           {
             gradeId: 0,
@@ -40,6 +40,7 @@ export default {
       }
       // checkboxesResponse: {
       //   offerId: 0
+
       // }
     }
   },
@@ -47,7 +48,7 @@ export default {
     getGradeCheckbox: function () {
       this.$http.get('/filter/grade')
           .then(result => {
-            this.checkBoxes.grades = result.data
+            this.checkBoxesRequest.grades = result.data
           })
           .catch(error => {
             alert('viga')
@@ -57,7 +58,7 @@ export default {
     getSubjectCheckbox: function () {
       this.$http.get("/filter/subject")
           .then(result => {
-                this.checkBoxes.subjects = result.data
+                this.checkBoxesRequest.subjects = result.data
               }
           )
           .catch(error => {
@@ -66,14 +67,15 @@ export default {
               }
           )
     },
-    AddExtraOffer: function () {
-      this.$http.post("/second", this.checkBoxesRequest
+    addGradeSubjectToOffer: function () {
+      this.$http.post("/home/offer/grade/subject", this.checkBoxesRequest
       ).then(response => {
         this.navigateToAddPicture()
       }).catch(error => {
         console.log(error)
       })
     },
+
 
     navigateToAddPicture: function () {
       this.$router.push({
