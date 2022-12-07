@@ -29,6 +29,8 @@
   </table>
     <div class="d-grid gap-2 d-md-block my-5">
       <button v-on:click="navigateToAddNewOffer" class="btn btn-success" type="button">Loo pakkumus</button>
+      <button v-on:click="logOut" class="btn btn-success" type="button">Logi välja</button>
+
       </div>
   </div>
 </template>
@@ -69,6 +71,13 @@ export default {
       this.$router.push({
         name: 'stageOneRoute'
       })
+    },
+
+    logOut: function () {
+      window.sessionStorage.removeItem('userId')
+      this.$router.push({
+        name: 'home'
+      })
     }
 
   },
@@ -80,6 +89,3 @@ export default {
 
 </script>
 
-<style scoped>
-
-</style>
