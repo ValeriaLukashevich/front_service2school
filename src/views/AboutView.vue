@@ -3,7 +3,7 @@
     <template>
       <div>
 
-        <h4>    Teenuste detailne otsing ja filtreerimine</h4>
+        <h4>Teenuste detailne otsing ja filtreerimine</h4>
 
         <table class="table table-success table-striped">
           <thead>
