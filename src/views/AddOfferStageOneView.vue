@@ -1,26 +1,26 @@
 <template>
-  <div class="col-3 mx-3 my-3">
-    <h3>Sisesta oma pakkumus.</h3>
+  <div style="width: 500px; margin: auto">
+    <h3>Sisesta oma teenus.</h3>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Pakkumuse nimi</span>
+        <span class="input-group-text" id="basic-addon1">Teenuse nimi</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.name" type="text" class="form-control" placeholder="Pakkumuse nimi"
+      <input v-model="addOfferFirstStageRequest.name" type="text" class="form-control" placeholder="Teenuse nimi"
              aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group">
       <div class="input-group-prepend">
-        <span class="input-group-text">Pakkumuse kirjeldus</span>
+        <span class="input-group-text">Teenuse kirjeldus</span>
       </div>
-      <textarea v-model="addOfferFirstStageRequest.description" class="form-control" placeholder="Pakkumuse kirjeldus"
+      <textarea v-model="addOfferFirstStageRequest.description" class="form-control" placeholder="Teenuse kirjeldus"
                 aria-label="Username"></textarea>
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">Pakkumuse hind õpilase kohta</span>
+        <span class="input-group-text" id="basic-addon1">Teenuse hind õpilase kohta</span>
       </div>
       <input v-model="addOfferFirstStageRequest.pricePerStudent" type="text" class="form-control"
-             placeholder="Pakkumuse hind õpilase kohta" aria-label="Username" aria-describedby="basic-addon1">
+             placeholder="Teenuse hind õpilase kohta" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
@@ -55,10 +55,9 @@
         <option selected disabled value="0">--Linn--</option>
         <option v-for="city in citiesDropdownInputs" :key="city.cityId" :value="city.cityId">{{ city.cityName }}</option>
       </select>
-    </div>
-    <div class="d-grid gap-2 d-md-block my-5">
-      <button class="btn btn-primary mx-1" type="button">Button</button>
-      <button v-on:click="createNewOfferFirstStage" class="btn btn-success" type="button">Edasi</button>
+
+      <button class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="createNewOfferFirstStage" class="btn btn-success m-1" type="button">Edasi</button>
     </div>
 
   </div>

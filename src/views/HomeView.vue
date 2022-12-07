@@ -17,7 +17,7 @@
           <td style="text-align:left;width: 30%">{{ offer.offerName }}</td>
           <td style="text-align:left">{{ offer.offerDescription }}</td>
           <td style="text-align:right;width: 10%">
-            <button v-on:click="navigateToPage(offer.offerId)" type="button" class="btn btn-info">Vaata</button>
+            <button v-on:click="navigateToPage(offer.offerId)" type="button" class="btn btn-success">Vaata</button>
           </td>
         </tr>
 
