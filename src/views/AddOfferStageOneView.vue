@@ -128,7 +128,7 @@ export default {
       })
     },
     navigateToSecondStage: function () {
-      sessionStorage.setItem('offerId', this.addOfferFirstStageResponse.off)
+      sessionStorage.setItem('offerId', this.addOfferFirstStageResponse.offerId)
       this.$router.push({
         name: 'gradeSubjectRoute'
       })
