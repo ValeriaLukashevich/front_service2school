@@ -11,25 +11,26 @@
     <tbody>
     <tr style="text-align:left; width: 20%">
       <th>Eesnimi:</th>
-      <td> {{ contact.contactFirstName }}</td>
+      <td> {{ contact.firstName }}</td>
     </tr>
     <tr style="text-align:left; width: 20%">
       <th>Perekonnanimi</th>
-      <td> {{ contact.contactLastName }}</td>
+      <td> {{ contact.lastName }}</td>
     </tr>
     <tr style="text-align:left; width: 20%">
       <th>Kontakttelefon:</th>
-      <td>{{ contact.contactPhone }}</td>
+      <td>{{ contact.phone }}</td>
     </tr>
     <tr style="text-align:left; width: 20%">
       <th>Asutus:</th>
-      <td>{{ contact.contactInstitution }}</td>
+      <td>{{ contact.institution }}</td>
     </tr>
     </tbody>
   </table>
     <div>
       <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
       <button v-on:click="logOut" class="btn btn-success m-1" type="button">Logi välja</button>
+      <button v-on:click="navigateToChangeInfo" class="btn btn-success m-1" type="button">Muuta konto info</button>
     </div>
   </div>
 </template>
@@ -45,10 +46,10 @@ export default {
             // TODO: võiks lisada ka e-maili aadressi ning kuvada selle kasutaja staatilises infos
             // TODO: võimaldada kasutajal oma infot ka redigeerida?
             contactId: 0,
-            contactFirstName: '',
-            contactLastName: '',
-            contactPhone: '',
-            contactInstitution: ''
+            firstName: '',
+            lastName: '',
+            phone: '',
+            institution: ''
           }
     }
 
@@ -77,6 +78,12 @@ export default {
       window.sessionStorage.removeItem('userId')
       this.$router.push({
         name: 'home'
+      })
+    },
+
+    navigateToChangeInfo: function () {
+      this.$router.push({
+        name: 'changeProfileRoute'
       })
     }
 
