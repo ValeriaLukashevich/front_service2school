@@ -5,43 +5,49 @@
     <br/>
     <div>
     <button type="button" class="btn btn-success">Tagasi</button>
-    <button v-on:click="createOffer" type="button" class="btn btn-success">Edasi</button>
+    <button v-on:click="AddExtraOffer" type="button" class="btn btn-success">Edasi</button>
     </div>
   </div>
 
 </template>
 
 <script>
-import GradeCheckboxOptions from "@/components/GradeCheckboxOptions";
-import SubjectCheckboxOptions from "@/views/SubjectCheckboxOptions";
+import GradeCheckboxOptions from "@/components/GradeCheckboxOptions.vue";
+import SubjectCheckboxOptions from "@/components/SubjectCheckboxOptions.vue";
 
 export default {
   name: "GradeSubjectView",
   components: {SubjectCheckboxOptions, GradeCheckboxOptions},
   data: function () {
     return {
-      grades: [
-        {
-          gradeId: 0,
-          gradeNumber: 0,
-          isSelected: false
-        }
-      ],
-      subjects: [
-        {
-          subjectId: 0,
-          subjectName: '',
-          isSelected: false
+      checkBoxesRequest: {
+        offerId: Number(sessionStorage.getItem('userId')),
+        grades: [
+          {
+            gradeId: 0,
+            gradeNumber: 0,
+            isSelected: false
+          }
+        ],
+        subjects: [
+          {
+            subjectId: 0,
+            subjectName: '',
+            isSelected: false
 
-        }
-      ]
+          }
+        ]
+      }
+      // checkboxesResponse: {
+      //   offerId: 0
+      // }
     }
   },
   methods: {
     getGradeCheckbox: function () {
       this.$http.get('/filter/grade')
           .then(result => {
-            this.grades = result.data
+            this.checkBoxes.grades = result.data
           })
           .catch(error => {
             alert('viga')
@@ -51,7 +57,7 @@ export default {
     getSubjectCheckbox: function () {
       this.$http.get("/filter/subject")
           .then(result => {
-                this.subjects = result.data
+                this.checkBoxes.subjects = result.data
               }
           )
           .catch(error => {
@@ -60,15 +66,20 @@ export default {
               }
           )
     },
-    createOffer: function () {
-      this.$http.post("/some/path", this.somePayloadDtoObject
+    AddExtraOffer: function () {
+      this.$http.post("/second", this.checkBoxesRequest
       ).then(response => {
-        console.log(response.data)
+        this.navigateToAddPicture()
       }).catch(error => {
         console.log(error)
       })
     },
 
+    navigateToAddPicture: function () {
+      this.$router.push({
+        name: 'pictureRoute'
+      })
+    }
   },
   beforeMount() {
     this.getGradeCheckbox()

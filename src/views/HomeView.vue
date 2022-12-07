@@ -18,7 +18,7 @@
           <td>{{ offer.offerName }}</td>
           <td>{{ offer.offerDescription }}</td>
           <td>
-            <button v-on:click="navigateToPage(offer.offerId)" type="button" class="btn btn-outline-warning">vaata</button>
+            <button v-on:click="navigateToPage" :key="offer.offerId" type="button" class="btn btn-outline-warning">vaata</button>
           </td>
         </tr>
 
@@ -50,11 +50,15 @@ export default {
       this.$http.get("/home")
           .then(response => {
             this.offers = response.data
+            ses
           })
           .catch(error => {
             console.log(error)
           })
     },
+
+    get
+
 
 
 
