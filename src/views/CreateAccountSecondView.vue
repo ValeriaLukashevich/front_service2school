@@ -1,6 +1,7 @@
 <template>
   <div style="width: 500px; margin: auto">
   <div>
+    <AlertError :message="errorResponse.message"/>
     <div class="input-group input-group-lg">
       <span class="input-group-text">Eesnimi:</span>
       <input v-model="contactRequest.firstName" type="text" class="form-control" aria-label="Sizing example input">
@@ -18,7 +19,7 @@
       <input v-model="contactRequest.phone" type="text" class="form-control" aria-label="Sizing example input">
     </div>
     <button v-on:click="navigateBack" type="button" class="btn btn-success m-1">Tagasi</button>
-    <button v-on:click="addNewContact" type="button" class="btn btn-success m-1">Salvesta</button>
+    <button v-on:click="createNewContact" type="button" class="btn btn-success m-1">Salvesta</button>
   </div>
   </div>
 </template>

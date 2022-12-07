@@ -28,8 +28,8 @@
     </tbody>
   </table>
     <div>
-      <button v-on:click="navigateToAddNewOffer" class="btn btn-success" type="button">Lisa uus teenus</button>
-      <button v-on:click="logOut" class="btn btn-success" type="button">Logi välja</button>
+      <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
+      <button v-on:click="logOut" class="btn btn-success m-1" type="button">Logi välja</button>
     </div>
   </div>
 </template>
