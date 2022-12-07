@@ -10,6 +10,7 @@ import AddOfferStageTwoView from "@/views/AddOfferStageTwoView";
 import AddOfferStageOneView from "@/views/AddOfferStageOneView";
 import AddPictureView from "@/views/AddPictureView";
 import DetailView from "@/views/DetailView";
+import ChangeProfileInfoView from "@/views/ChangeProfileInfoView";
 
 Vue.use(VueRouter)
 
@@ -48,6 +49,11 @@ const routes = [
     path: '/grade-subject',
     name: 'gradeSubjectRoute',
     component: GradeSubjectView
+  },
+  {
+    path: '/change-profile',
+    name: 'changeProfileRoute',
+    component: ChangeProfileInfoView
   },
   {
     path: '/new-account1',
