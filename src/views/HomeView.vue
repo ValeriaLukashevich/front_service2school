@@ -28,19 +28,6 @@
 
 </template>
 
-<style>
-
-/*table, th, td {*/
-/*  border: 1px solid white;*/
-/*  border-collapse: collapse;*/
-/*}*/
-
-/*th, td {*/
-/*  background-color: #96D4D4;*/
-/*}*/
-
-</style>
-
 <script>
 export default {
   name: 'HomeView',

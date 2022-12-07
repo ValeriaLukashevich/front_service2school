@@ -1,18 +1,21 @@
 <template>
 
-  <div class="myBackground">
-    <ImageInput @pictureInputSuccess="setPicture"/>
-    <img :src="pictureDto.pictureData" class="myPicSize">
-    <button v-on:click="addPicture" type="button" class="btn btn-outline-dark">Salvesta pilt</button>
-    <br/>
-    <br/>
-    <textarea v-model="pictureDto.additionalInfo" placeholder="Lisainfo" cols="30" rows="10"></textarea>
-    <div class="buttonPosition d-grid gap-2 d-md-block">
-      <button class="btn btn-primary" type="button">Button</button>
-      <button class=" btn btn-primary" type="button">Button</button>
-    </div>
+  <div>
 
+    <div>
+          <ImageInput @pictureInputSuccess="setPicture"/>
+          <img :src="pictureDto.pictureData" class="myPicSize">
+
+          <button v-on:click="addPicture" class="btn btn-success m-1" type="button">Salvesta pilt</button>
+    </div>
+<br>
+    <textarea v-model="pictureDto.additionalInfo" placeholder="Lisainfo" cols="30" rows="10"></textarea>
+    <div>
+      <button class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="" class="btn btn-success m-1" type="button">Salvesta</button>
+    </div>
   </div>
+
 </template>
 
 <script>

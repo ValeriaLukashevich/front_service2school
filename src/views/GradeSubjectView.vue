@@ -1,11 +1,19 @@
 <template>
   <div>
-    <GradeCheckboxOptions :grades="checkBoxesRequest.grades"/>
-    <SubjectCheckboxOptions :subjects="checkBoxesRequest.subjects"/>
-    <br/>
+
+    <table class="table" style="width: 400px; alignment: center; margin: auto">
+      <tr class="align-text-top">
+        <td class="">
+        <GradeCheckboxOptions :grades="checkBoxesRequest.grades"/>
+        </td>
+        <td>
+          <SubjectCheckboxOptions :subjects="checkBoxesRequest.subjects"/>
+        </td>
+      </tr>
+    </table>
     <div>
-    <button type="button" class="btn btn-success">Tagasi</button>
-    <button v-on:click="addGradeSubjectToOffer" type="button" class="btn btn-success">Edasi</button>
+      <button class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="addGradeSubjectToOffer" class="btn btn-success m-1" type="button">Edasi</button>
     </div>
   </div>
 
@@ -90,4 +98,12 @@ export default {
 }
 
 </script>
+
+<style>
+
+td {
+  text-align: left;
+}
+
+</style>
 

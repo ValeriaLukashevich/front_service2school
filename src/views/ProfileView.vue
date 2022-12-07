@@ -1,36 +1,38 @@
 <template>
   <div class="ms-5 col-4">
-  <table class="table table-success table-striped">
+    <table class="table table-success table-striped">
 
-    <thead>
-    <tr>
-      <th colspan="2">Konto info</th>
+      <thead>
+      <tr>
+        <th colspan="2">Konto info</th>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr style="text-align:left; width: 20%">
-      <th>Eesnimi:</th>
-      <td> {{ contact.firstName }}</td>
-    </tr>
-    <tr style="text-align:left; width: 20%">
-      <th>Perekonnanimi</th>
-      <td> {{ contact.lastName }}</td>
-    </tr>
-    <tr style="text-align:left; width: 20%">
-      <th>Kontakttelefon:</th>
-      <td>{{ contact.phone }}</td>
-    </tr>
-    <tr style="text-align:left; width: 20%">
-      <th>Asutus:</th>
-      <td>{{ contact.institution }}</td>
-    </tr>
-    </tbody>
-  </table>
+      </tr>
+      </thead>
+      <tbody>
+      <tr style="text-align:left; width: 20%">
+        <th>Eesnimi:</th>
+        <td> {{ contact.firstName }}</td>
+      </tr>
+      <tr style="text-align:left; width: 20%">
+        <th>Perekonnanimi</th>
+        <td> {{ contact.lastName }}</td>
+      </tr>
+      <tr style="text-align:left; width: 20%">
+        <th>Kontakttelefon:</th>
+        <td>{{ contact.phone }}</td>
+      </tr>
+      <tr style="text-align:left; width: 20%">
+        <th>Asutus:</th>
+        <td>{{ contact.institution }}</td>
+      </tr>
+      </tbody>
+    </table>
     <div>
-      <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
+
+      <button v-on:click="navigateToChangeInfo" class="btn btn-success m-1" type="button">Muuda konto infot</button>
       <button v-on:click="logOut" class="btn btn-success m-1" type="button">Logi välja</button>
-      <button v-on:click="navigateToChangeInfo" class="btn btn-success m-1" type="button">Muuta konto info</button>
+      <br><br>
+      <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
     </div>
   </div>
 </template>
