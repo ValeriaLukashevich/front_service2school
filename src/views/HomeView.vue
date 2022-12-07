@@ -1,30 +1,30 @@
 <template>
-    <div>
-      <img alt="Vue logo" src="../assets/s2c-logo.png">
-      <h4>Viis viimati lisatud teenust:</h4>
+  <div>
+    <img alt="Vue logo" src="../assets/s2c-logo.png">
+    <h4>Viis viimati lisatud teenust:</h4>
 
-<table class="table table-success table-striped">
-        <thead>
-        <tr>
-          <th style="text-align:left">Nimetus</th>
-          <th style="text-align:left">Kirjeldus</th>
-          <th></th>
+    <table className="table table-success table-striped">
+      <thead>
+      <tr>
+        <th style="text-align:left">Nimetus</th>
+        <th style="text-align:left">Kirjeldus</th>
+        <th></th>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="offer in offers">
-          <td style="text-align:left;width: 30%">{{ offer.offerName }}</td>
-          <td style="text-align:left">{{ offer.offerDescription }}</td>
-          <td style="text-align:right;width: 10%">
-            <button v-on:click="navigateToPage(offer.offerId)" type="button" class="btn btn-info">Vaata</button>
-          </td>
-        </tr>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="offer in offers">
+        <td style="text-align:left;width: 30%">{{ offer.offerName }}</td>
+        <td style="text-align:left">{{ offer.offerDescription }}</td>
+        <td style="text-align:right;width: 10%">
+          <button v-on:click="navigateToPage(offer.offerId)" type="button" className="btn btn-info">Vaata</button>
+        </td>
+      </tr>
 
 
-        </tbody>
-      </table>
-    </div>
+      </tbody>
+    </table>
+  </div>
 
 </template>
 

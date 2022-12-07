@@ -2,11 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from "@/views/LoginView";
-import GradeSubjectView from "@/components/GradeSubjectView";
+import GradeSubjectView from "@/views/GradeSubjectView.vue";
 import ProfileView from "@/views/ProfileView";
 import CreateAccountFirstView from "@/views/CreateAccountFirstView";
 import CreateAccountSecondView from "@/views/CreateAccountSecondView";
-import AddOfferStageTwoView from "@/views/AddOfferStageTwoView";
 import AddOfferStageOneView from "@/views/AddOfferStageOneView";
 import AddPictureView from "@/views/AddPictureView";
 import DetailView from "@/views/DetailView";
@@ -15,11 +14,7 @@ import ChangeProfileInfoView from "@/views/ChangeProfileInfoView";
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/stageTwo',
-    name: 'stageTwoRoute',
-    component: AddOfferStageTwoView
-  },
+
   {
     path: '/stageOne',
     name: 'stageOneRoute',

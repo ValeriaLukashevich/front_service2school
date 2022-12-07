@@ -7,7 +7,10 @@
     <br/>
     <br/>
     <textarea v-model="pictureDto.additionalInfo" placeholder="Lisainfo" cols="30" rows="10"></textarea>
-
+    <div class="buttonPosition d-grid gap-2 d-md-block">
+      <button class="btn btn-primary" type="button">Button</button>
+      <button class=" btn btn-primary" type="button">Button</button>
+    </div>
 
   </div>
 </template>
