@@ -105,6 +105,8 @@
     </table>
     <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">
       Muuda
+    </button>   <button v-if="editButtonDisplay"  type="button" class="btn btn-success m-1">
+      Kustuta
     </button>
 
   </div>
