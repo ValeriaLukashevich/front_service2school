@@ -14,8 +14,8 @@
         Siseta parool:
         <input v-model="password" type="password" class="form-control" placeholder="password" aria-label="password"
                aria-describedby="basic-addon1">
-                <button v-on:click="login" type="button" class="btn btn-primary m-2">Logi sisse</button>
-        <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-primary">Loo konto</button>
+                <button v-on:click="login" type="button" class="btn btn-success m-1">Logi sisse</button>
+        <button v-on:click="navigateToCreateAccountFirst" type="button" class="btn btn-success m-1">Loo konto</button>
       </div>
         </div>
 

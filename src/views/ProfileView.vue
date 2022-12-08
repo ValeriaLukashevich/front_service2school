@@ -1,4 +1,7 @@
 <template>
+
+<div class="otherBackground">
+
   <div class="ms-5 col-4">
     <table class="table table-success table-striped">
 
@@ -34,14 +37,33 @@
       <br><br>
       <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
     </div>
-    <!-- Minu teenused dropdown  -->
-    <select class="form-select" aria-label="Default select example">
-      <option selected disabled value="0">--Minu teenused--</option>
-      <option v-for="offer in offers" :key="offer.offerId" >{{ offer.offerName }}</option>
-    </select>
+<br>
+
+    <table class="table table-success table-striped">
+      <thead>
+      <tr>
+        <th style="text-align:left">Nimetus</th>
+        <th style="text-align:left">Kirjeldus</th>
+        <th></th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="offer in offers">
+        <td style="text-align:left;width: 30%">{{ offer.offerName }}</td>
+        <td style="text-align:left">{{ offer.offerDescription }}</td>
+        <td style="text-align:right;width: 10%">
+          <button v-on:click="navigateToOffer(offer.offerId)" type="button" class="btn btn-success">Vaata</button>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+
 
 
   </div>
+</div>
 </template>
 
 <script>
@@ -50,6 +72,7 @@ export default {
   data: function () {
     return {
       userId: Number(sessionStorage.getItem('userId')),
+      selectedOfferId: 0,
       contact:
           {
             // TODO: võiks lisada ka e-maili aadressi ning kuvada selle kasutaja staatilises infos
@@ -73,7 +96,7 @@ export default {
   methods: {
 
     getMyOffers: function () {
-      this.$http.get("/home", {
+      this.$http.get("/home/user-offers", {
             params: {
               userId: this.userId,
             }
@@ -98,6 +121,7 @@ export default {
         console.log(error)
       })
     },
+
     navigateToAddNewOffer: function () {
       this.$router.push({
         name: 'stageOneRoute'
@@ -116,7 +140,15 @@ export default {
       this.$router.push({
         name: 'changeProfileRoute'
       })
-    }
+    },
+
+    navigateToOffer: function (offerId) {
+      sessionStorage.setItem('offerId', offerId),
+      this.$router.push({
+        name: 'detailViewRoute'
+      })
+    },
+
 
   },
   beforeMount() {
