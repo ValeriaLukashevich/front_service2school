@@ -1,6 +1,7 @@
 <template>
   <div style="width: 500px; margin: auto">
     <h3>Sisesta oma teenus.</h3>
+    <AlertError :message="errorResponse.message"/>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Teenuse nimi</span>
@@ -64,8 +65,10 @@
 </template>
 
 <script>
+import AlertError from "@/components/alert/AlertError";
 export default {
   name: "AddOfferStageOneView",
+  components: {AlertError},
   data: function () {
     return {
       citiesDropdownInputs: [
