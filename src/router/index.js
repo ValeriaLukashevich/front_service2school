@@ -26,6 +26,11 @@ const routes = [
     component: AddOfferStageOneView
   },
   {
+    path: '/change-offer',
+    name: 'changeOfferRoute',
+    component: ChangeProfileInfoView
+  },
+  {
     path: '/',
     name: 'home',
     component: HomeView
