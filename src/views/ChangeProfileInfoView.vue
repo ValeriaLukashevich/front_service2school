@@ -18,7 +18,7 @@
         <span class="input-group-text" id="inputGroup-sizing-lg">Kontakttelefon:</span>
         <input v-model="contactUpdate.phone" type="text" class="form-control" aria-label="Sizing example input">
       </div>
-
+      <button v-on:click="navigateBack" class="btn btn-success m-1" type="button">Tagasi</button>
       <button v-on:click="toChangeContact" type="button" class="btn btn-success m-1">Salvesta</button>
     </div>
   </div>
@@ -92,6 +92,11 @@ export default {
     displayRequiredFieldsNotFilledAlert: function () {
       this.errorResponse.message = 'Täida kõik väljad';
     },
+    navigateBack: function () {
+      this.$router.push({
+        path: '/profile'
+      })
+    }
   },
   beforeMount() {
     this.getContactInfo()
