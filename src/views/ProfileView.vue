@@ -1,4 +1,7 @@
 <template>
+
+
+
   <div class="ms-5 col-4">
     <table class="table table-success table-striped">
 
@@ -40,8 +43,8 @@
       <option v-for="offer in offers" :key="offer.offerId" >{{ offer.offerName }}</option>
     </select>
 
-
   </div>
+
 </template>
 
 <script>

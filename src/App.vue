@@ -1,5 +1,5 @@
 <template>
-
+  <div class="myBackground">
   <div id="app">
     <div v-if="loginDisplay">
 
@@ -30,6 +30,7 @@
 
 
     <router-view @updateStatusEvent="updateStatus"/>
+  </div>
   </div>
 
 
