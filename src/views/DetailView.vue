@@ -105,7 +105,7 @@
     </table>
     <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">
       Muuda
-    </button>   <button v-if="editButtonDisplay"  type="button" class="btn btn-success m-1">
+    </button>   <button v-if="editButtonDisplay" v-on:click="deleteOffer" type="button" class="btn btn-success m-1">
       Kustuta
     </button>
 
@@ -166,6 +166,21 @@ export default {
         console.log(error)
       })
 
+    },
+
+    deleteOffer: function () {
+      this.$http.delete("/home/delete-offer", {
+            params: {
+              offerId: this.offerId,
+            }
+          }
+      ).then(response => {
+      this.$router.push({
+        name: 'profileRoute'
+      })
+      }).catch(error => {
+        console.log(error)
+      })
     },
     navigateToChangeOffer: function () {
       this.$router.push({
