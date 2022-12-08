@@ -103,11 +103,9 @@
       </tr>
       </tbody>
     </table>
-    <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">
-      Muuda
-    </button>   <button v-if="editButtonDisplay" v-on:click="deleteOffer" type="button" class="btn btn-success m-1">
-      Kustuta
-    </button>
+    <button v-on:click="navigateBack" class="btn btn-success m-1" type="button">Tagasi</button>
+    <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">Muuda</button>
+    <button v-if="editButtonDisplay" v-on:click="deleteOffer" type="button" class="btn btn-success m-1">Kustuta</button>
 
   </div>
 
@@ -187,12 +185,20 @@ export default {
         name: 'changeOfferRoute'
       })
     },
+    navigateBack: function () {
+      this.$router.push({
+        name: 'profileRoute'
+      })
+    },
   },
   beforeMount() {
     this.getOfferDetails()
 
+
+
   }
 }
+
 
 
 </script>

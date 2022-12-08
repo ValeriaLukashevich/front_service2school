@@ -4,17 +4,17 @@
     <div v-if="loginDisplay">
 
       <nav>
-        <router-link to="/" type="button" class="btn btn-success">Kodu</router-link>
-        <router-link to="/about" type="button" class="btn btn-success">Teenused</router-link>
-        <router-link to="/loginRequest" type="button" class="btn btn-success">Login</router-link>
+        <router-link to="/" type="button" class="btn btn-success m-1">Kodu</router-link>
+        <router-link to="/about" type="button" class="btn btn-success m-1">Teenused</router-link>
+        <router-link to="/loginRequest" type="button" class="btn btn-success m-1">Login</router-link>
       </nav>
     </div>
     <div v-else>
 
       <nav>
-        <router-link to="/" type="button" class="btn btn-success">Kodu</router-link>
-        <router-link to="/about" type="button" class="btn btn-success">Teenused</router-link>
-        <router-link to="/profile" type="button" class="btn btn-success">Konto</router-link>
+        <router-link to="/" type="button" class="btn btn-success m-1">Kodu</router-link>
+        <router-link to="/about" type="button" class="btn btn-success m-1">Teenused</router-link>
+        <router-link to="/profile" type="button" class="btn btn-success m-1">Konto</router-link>
       </nav>
 
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div style="width: 500px; margin: auto">
-    <h3>Uuenda oma teenus.</h3>
+    <h3>Muuda oma teenust</h3>
 
     <div class="input-group mb-3">
       <div class="input-group-prepend">
