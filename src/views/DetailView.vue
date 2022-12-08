@@ -137,7 +137,7 @@ export default {
         pricePerStudent: 0,
         studentsMin: 0,
         studentsMax: 0,
-        // cityId: 0,
+        cityId: 0,
         cityName: '',
         address: '',
         phone: 0,

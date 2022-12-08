@@ -10,7 +10,7 @@
       </nav>
     </div>
     <div v-else>
-      MINGI JAMA
+
       <nav>
         <router-link to="/" type="button" class="btn btn-outline-success m-1">Kodu</router-link>
         <router-link to="/about" type="button" class="btn btn-outline-success m-1">Teenused</router-link>
