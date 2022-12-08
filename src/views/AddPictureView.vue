@@ -6,13 +6,13 @@
           <ImageInput @pictureInputSuccess="setPicture"/>
           <img :src="pictureDto.pictureData" class="myPicSize">
 
-          <button v-on:click="addPicture" class="btn btn-success m-1" type="button">Salvesta pilt</button>
+
     </div>
 <br>
     <textarea v-model="pictureDto.additionalInfo" placeholder="Lisainfo" cols="30" rows="10"></textarea>
     <div>
-      <button class="btn btn-success m-1" type="button">Tagasi</button>
-      <button v-on:click="" class="btn btn-success m-1" type="button">Salvesta</button>
+      <button v-on:click="backToGradeSubject" class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="addPicture" class="btn btn-success m-1" type="button">Salvesta pilt</button>
     </div>
   </div>
 
@@ -50,7 +50,14 @@ export default {
       this.pictureDto.pictureData = picture;
     },
 
-  }
+    backToGradeSubject: function() {
+      this.$router.push({
+        path: '/grade-subject'
+          }
+      )
+    }
+  },
+
 }
 </script>
 

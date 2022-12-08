@@ -12,7 +12,7 @@
       </tr>
     </table>
     <div>
-      <button class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="backAddOfferStageOneView" class="btn btn-success m-1" type="button">Tagasi</button>
       <button v-on:click="addGradeSubjectToOffer" class="btn btn-success m-1" type="button">Edasi</button>
     </div>
   </div>
@@ -83,12 +83,16 @@ export default {
         console.log(error)
       })
     },
-
-
     navigateToAddPicture: function () {
       this.$router.push({
         name: 'pictureRoute'
       })
+    },
+    backAddOfferStageOneView: function() {
+      this.$router.push({
+        path: '/stageOne'
+          }
+      )
     }
   },
   beforeMount() {

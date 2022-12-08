@@ -57,7 +57,7 @@
         <option v-for="city in citiesDropdownInputs" :key="city.cityId" :value="city.cityId">{{ city.cityName }}</option>
       </select>
 
-      <button class="btn btn-success m-1" type="button">Tagasi</button>
+      <button v-on:click="backToProfileInfoView" class="btn btn-success m-1" type="button">Tagasi</button>
       <button v-on:click="createNewOfferFirstStage" class="btn btn-success m-1" type="button">Edasi</button>
     </div>
 
@@ -138,6 +138,11 @@ export default {
     displayRequiredFieldsNotFilledAlert: function () {
       this.errorResponse.message = 'Täida kõik väljad';
     },
+    backToProfileInfoView: function () {
+      this.$router.push({
+        name: 'profileRoute'
+      })
+    }
   },
   beforeMount() {
     this.getCitiesDropdownInputs()
