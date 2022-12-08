@@ -103,6 +103,7 @@
       </tr>
       </tbody>
     </table>
+    <button v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">Muuta</button>
   </div>
 
 </template>
@@ -155,7 +156,12 @@ export default {
         console.log(error)
       })
 
-    }
+    },
+    navigateToChangeOffer: function () {
+      this.$router.push({
+        name: 'changeOfferRoute'
+      })
+    },
   },
   beforeMount() {
     this.getOfferDetails()

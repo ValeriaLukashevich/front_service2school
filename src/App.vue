@@ -32,7 +32,6 @@
   max-width: 960px;
   margin: auto;
 }
-
 nav {
   padding: 30px;
 }
