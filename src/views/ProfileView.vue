@@ -34,6 +34,13 @@
       <br><br>
       <button v-on:click="navigateToAddNewOffer" class="btn btn-success m-1" type="button">Lisa uus teenus</button>
     </div>
+    <!-- Minu teenused dropdown  -->
+    <select class="form-select" aria-label="Default select example">
+      <option selected disabled value="0">--Minu teenused--</option>
+      <option v-for="offer in offers" :key="offer.offerId" >{{ offer.offerName }}</option>
+    </select>
+
+
   </div>
 </template>
 
@@ -46,17 +53,38 @@ export default {
       contact:
           {
             // TODO: võiks lisada ka e-maili aadressi ning kuvada selle kasutaja staatilises infos
-            // TODO: võimaldada kasutajal oma infot ka redigeerida?
+
             contactId: 0,
             firstName: '',
             lastName: '',
             phone: '',
             institution: ''
-          }
+          },
+      offers: [
+        {
+          offerId: 0,
+          offerName: '',
+          offerDescription: ''
+        }
+      ]
     }
 
   },
   methods: {
+
+    getMyOffers: function () {
+      this.$http.get("/home", {
+            params: {
+              userId: this.userId,
+            }
+          }
+      ).then(response => {
+        this.offers = response.data
+      }).catch(error => {
+        console.log(error)
+      })
+    },
+
     getContactInfo: function () {
 
       this.$http.get("/profile", {
@@ -78,6 +106,7 @@ export default {
 
     logOut: function () {
       window.sessionStorage.removeItem('userId')
+      this.$emit('updateStatusEvent')
       this.$router.push({
         name: 'home'
       })
@@ -92,6 +121,7 @@ export default {
   },
   beforeMount() {
     this.getContactInfo()
+    this.getMyOffers()
   }
 }
 

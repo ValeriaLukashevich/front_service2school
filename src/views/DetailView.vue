@@ -103,7 +103,9 @@
       </tr>
       </tbody>
     </table>
-    <button v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">Muuta</button>
+    <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">
+      Muuta
+    </button>
   </div>
 
 </template>
@@ -126,14 +128,16 @@ export default {
   name: 'DetailView',
   data: function () {
     return {
-      offerId: sessionStorage.getItem('offerId'),
+      editButtonDisplay: false,
+      offerId: Number(sessionStorage.getItem('offerId')),
       offerDetail: {
+        userId: 0,
         name: '',
         description: '',
         pricePerStudent: 0,
         studentsMin: 0,
         studentsMax: 0,
-        cityId: 0,
+        // cityId: 0,
         cityName: '',
         address: '',
         phone: 0,
@@ -143,6 +147,7 @@ export default {
     }
   },
   methods: {
+
     getOfferDetails: function () {
 
       this.$http.get("/home/detail", {
@@ -152,6 +157,8 @@ export default {
           }
       ).then(response => {
         this.offerDetail = response.data
+        let userId = Number(sessionStorage.getItem('userId'))
+        this.editButtonDisplay = userId == this.offerDetail.userId
       }).catch(error => {
         console.log(error)
       })
@@ -165,6 +172,7 @@ export default {
   },
   beforeMount() {
     this.getOfferDetails()
+
   }
 }
 
