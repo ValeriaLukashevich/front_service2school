@@ -10,6 +10,7 @@ import AddOfferStageOneView from "@/views/AddOfferStageOneView";
 import AddPictureView from "@/views/AddPictureView";
 import DetailView from "@/views/DetailView";
 import ChangeProfileInfoView from "@/views/ChangeProfileInfoView";
+import ChangeOfferInfoView from "@/views/ChangeOfferInfoView";
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,7 @@ const routes = [
   {
     path: '/change-offer',
     name: 'changeOfferRoute',
-    component: ChangeProfileInfoView
+    component: ChangeOfferInfoView
   },
   {
     path: '/',

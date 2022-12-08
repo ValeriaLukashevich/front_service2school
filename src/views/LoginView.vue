@@ -76,6 +76,7 @@ export default {
 
     navigateToProfile: function () {
       sessionStorage.setItem('userId', this.loginResponse.userId);
+      this.$emit('updateStatusEvent')
       this.$router.push({
         name: 'profileRoute', query: {
           userId: this.userId

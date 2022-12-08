@@ -38,7 +38,6 @@ export default {
         lastName: '',
         phone: '',
         institution: '',
-
       },
       errorResponse: {
         message: '',
@@ -57,14 +56,13 @@ export default {
         this.changeContact()
       }
     },
-    getContactInfo: function () {
 
+    getContactInfo: function () {
       this.$http.get("/profile", {
             params: {
               userId: this.userId
             }
-          }
-      ).then(response => {
+          }).then(response => {
         this.contactUpdate = response.data
       }).catch(error => {
         console.log(error)

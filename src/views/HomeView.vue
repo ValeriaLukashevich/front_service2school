@@ -24,13 +24,16 @@
 
         </tbody>
       </table>
+
     </div>
 
 </template>
 
 <script>
+import Login from "@/views/LoginView";
 export default {
   name: 'HomeView',
+  components: {Login},
   data: function () {
     return {
       offers: [
