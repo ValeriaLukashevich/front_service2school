@@ -3,7 +3,7 @@
     <template>
       <div>
 
-        <h4>Teenuste detailne otsing ja filtreerimine</h4>
+        <h4>Teenuste nimekiri</h4>
 
         <table class="table table-success table-striped">
           <thead>
@@ -47,7 +47,7 @@
 
       methods: {
         getNameDescription: function () {
-          this.$http.get("/home")
+          this.$http.get("/home/about")
               .then(response => {
                 this.offers = response.data
               })
