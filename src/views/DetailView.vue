@@ -104,8 +104,9 @@
       </tbody>
     </table>
     <button v-if="editButtonDisplay" v-on:click="navigateToChangeOffer" type="button" class="btn btn-success m-1">
-      Muuta
+      Muuda
     </button>
+
   </div>
 
 </template>

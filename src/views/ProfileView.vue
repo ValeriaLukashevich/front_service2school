@@ -73,7 +73,7 @@ export default {
   methods: {
 
     getMyOffers: function () {
-      this.$http.get("/home", {
+      this.$http.get("/home/detail", {
             params: {
               userId: this.userId,
             }
@@ -98,6 +98,7 @@ export default {
         console.log(error)
       })
     },
+
     navigateToAddNewOffer: function () {
       this.$router.push({
         name: 'stageOneRoute'
