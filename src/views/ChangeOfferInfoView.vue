@@ -20,21 +20,21 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Teenuse hind õpilase kohta</span>
       </div>
-      <input v-model="offerUpdate.pricePerStudent" type="text" class="form-control" aria-label="Username"
+      <input v-model="offerUpdate.pricePerStudent" type="number" class="form-control" aria-label="Username"
              aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Õpilaste arv min</span>
       </div>
-      <input v-model="offerUpdate.studentsMin" type="text" class="form-control" aria-label="Username"
+      <input v-model="offerUpdate.studentsMin" type="number" class="form-control" aria-label="Username"
              aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Õpilaste arv max</span>
       </div>
-      <input v-model="offerUpdate.studentsMax" type="text" class="form-control" aria-label="Username"
+      <input v-model="offerUpdate.studentsMax" type="number" class="form-control" aria-label="Username"
              aria-describedby="basic-addon1">
     </div>
     <div>
@@ -57,7 +57,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
         </div>
-        <input v-model="offerUpdate.phone" type="text" class="form-control" aria-label="Username"
+        <input v-model="offerUpdate.phone" type="number" class="form-control" aria-label="Username"
                aria-describedby="basic-addon1">
       </div>
       <div class="input-group mb-3">

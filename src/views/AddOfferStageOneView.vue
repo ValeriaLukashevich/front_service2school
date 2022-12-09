@@ -20,21 +20,21 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Teenuse hind õpilase kohta</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.pricePerStudent" type="text" class="form-control"
+      <input v-model="addOfferFirstStageRequest.pricePerStudent" type="number" class="form-control"
              placeholder="Teenuse hind õpilase kohta" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Õpilaste arv min</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.studentsMin" type="text" class="form-control"
+      <input v-model="addOfferFirstStageRequest.studentsMin" type="number" class="form-control"
              placeholder="Õpilaste arv min" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Õpilaste arv max</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.studentsMax" type="text" class="form-control"
+      <input v-model="addOfferFirstStageRequest.studentsMax" type="number" class="form-control"
              placeholder="Õpilaste arv max" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
