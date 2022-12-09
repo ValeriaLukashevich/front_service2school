@@ -40,7 +40,9 @@ export default {
     addPicture: function () {
       this.$http.post("/photo", this.pictureDto
       ).then(response => {
-        console.log(response.data)
+        this.$router.push({
+          path: '/profile'
+        })
       }).catch(error => {
         console.log(error)
       })
