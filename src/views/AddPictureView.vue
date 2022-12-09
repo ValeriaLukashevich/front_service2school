@@ -12,7 +12,7 @@
     <textarea v-model="pictureDto.additionalInfo" placeholder="Lisainfo" cols="30" rows="10"></textarea>
     <div>
       <button v-on:click="backToGradeSubject" class="btn btn-success m-1" type="button">Tagasi</button>
-      <button v-on:click="addPicture" class="btn btn-success m-1" type="button">Salvesta pilt</button>
+      <button v-on:click="addPicture" class="btn btn-success m-1" type="button">Salvesta</button>
     </div>
   </div>
 
@@ -40,8 +40,13 @@ export default {
     addPicture: function () {
       this.$http.post("/photo", this.pictureDto
       ).then(response => {
-        console.log(response.data)
-      }).catch(error => {
+        this.$router.push({
+              path: '/profile'
+            }
+        )
+
+
+              }).catch(error => {
         console.log(error)
       })
     },

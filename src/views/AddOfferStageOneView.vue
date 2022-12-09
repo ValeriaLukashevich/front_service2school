@@ -48,7 +48,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Telefoninumber</span>
       </div>
-      <input v-model="addOfferFirstStageRequest.phone" type="text" class="form-control" placeholder="Telefoninumber"
+      <input v-model="addOfferFirstStageRequest.phone" type="number" class="form-control" placeholder="Telefoninumber"
              aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <div>
